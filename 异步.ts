@@ -3,6 +3,8 @@
 //  雪星异步组件
 //
 
+import { 瞄于 } from "./测试"
+
 /*
 singleCoroutineMap
         0123456789...
@@ -22,8 +24,64 @@ event4    ====
 
 etc
 */
-export function 睡(毫秒: number) { return new Promise(resolve => setTimeout(resolve, 毫秒)) }
+/**
+ * 
+ * author: YiDong Zhuo(snomiao@gmail.com)
+ */
+if (require.main === module) (async () => {
+    return typeof Promise.resolve()
+    // return await Promise.race([false, 睡(1000)].filter())
 
+    const 报数2 = (async (x: number) => {
+        console.log(+new Date(), x * 2)
+        await 睡(1000)
+        return x * 2
+    })
+    // console.log(await 异步映(报数2, { 并发数: 0 })([1, 2, 3, 4, 5, 6]))
+    console.log(await 异步映(报数2, { 并发数: 1 })([1, 2, 3, 4, 5, 6]))
+    console.log(await 异步映(报数2, { 并发数: 2 })([1, 2, 3, 4, 5, 6]))
+    console.log(await 异步映(报数2, { 并发数: 3 })([1, 2, 3, 4, 5, 6]))
+    console.log(await 异步映(报数2)([1, 2, 3, 4, 5, 6]))
+})().then(console.log).catch(console.error)
+type 列 = any[]
+export function 睡(毫秒: number) { return new Promise(resolve => setTimeout(resolve, 毫秒)) }
+export function 异步映<入型, 出型>(函: (值: 入型, 序: number, 列: 入型[]) => Promise<出型>, 参数 = { 并发数: +Infinity }) {
+    return async (列: 入型[]): Promise<出型[]> => {
+        let 并发数 = 参数.并发数
+        type Reduce出型 = Promise<(出型 | Promise<出型>)[]>
+        const 返列 = []
+        for (let 序 = 0; 序 < 列.length; 序++) {
+            const 值 = 列[序];
+            if (!并发数) await Promise.race(await 返列)
+            并发数--
+            // 返列[序] =await 函()
+            返列[序] = 函(值, 序, 列).finally(() => 并发数++)
+        }
+        return Promise.all(返列)
+        // for (const 列 in 列) {
+        //     if (Object.prototype.hasOwnProperty.call(object, key)) {
+        //         const element = object[key];
+
+        //     }
+        // }
+
+
+        // const re = await 列.reduce(async (前: Reduce出型, 后: 入型, 序): Reduce出型 => {
+        //     瞄于('并发数')(并发数)
+        //     if (!并发数) await Promise.race(await 前).then(())
+        //     并发数--
+        //     const 返值 = await 函(后, 序, 列).finally(() => 并发数++)
+        //     return [...(await 前), 返值]
+        //     // const 函Promise = 函(后, 序, 列).finally(() => 并发数++)
+        //     // if (瞄于('并发数')(并发数)) {
+        //     //     const 返值 = Promise.resolve(函Promise)
+        //     //     return [...(await 前), 返值]
+        //     // } else {
+        //     // }
+        // }, Promise.resolve([]))
+        // return await Promise.all(re)
+    }
+}
 // exports.异步映射 = async function (func, array, 协程数 = 1) {
 //     if (typeof (func) !== "function") throw new Error("param func is not a function")
 //     // console.debug(协程数)
