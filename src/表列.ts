@@ -37,7 +37,7 @@ export type 键 = string | number | symbol;
 export type 对列 = Iterable<readonly [键, any]>;
 
 export function 列交(列列: 列[]) { return 列列.reduce((甲, 乙) => 甲.filter(值 => 乙.includes(值))) }
-export function 列值种数表(列: 列) { return 列.reduce((表, 值) => {表[值] = 表[值]||0; 表[值]++; 表}, {}); }
+export function 列值种数表(列: 列) { return 列.reduce((表, 值) => { 表[值] = 表[值] || 0; 表[值]++; 表 }, {}); }
 export function 列列平压(列列: 列列) { return 列列.flat(); }
 export function 列列翻转(列列: any[][]) { return 列列[0]?.map((_, 序) => 列列.map(列 => 列[序])) || []; }
 export function 列列错合(列列: any[][]) { return 列列[0]?.map((_, 序) => 列列.map(列 => 列[序])) || []; }
