@@ -2,10 +2,10 @@
  * imports...
  * author: YiDong Zhuo(snomiao@gmail.com)
  */
-import './函式'
-import './测试'
-import './统计'
-import './表列'
+// import * from './函式'
+// import * from './测试'
+// import * from './统计'
+// import * from './表列'
 
 if (require.main === module) (async () => {
     console.log('你好, 世界');

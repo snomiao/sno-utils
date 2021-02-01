@@ -1,11 +1,14 @@
 {
   "name": "sno-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "snoutils - 雪星实用组件库……TS中文函数式编程范式尝试，大部分功能尚在内测中",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "author": "snomiao@gmail.com",
   "license": "ISC",
   "devDependencies": {
