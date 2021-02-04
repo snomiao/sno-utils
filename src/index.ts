@@ -2,12 +2,16 @@
  * imports...
  * author: YiDong Zhuo(snomiao@gmail.com)
  */
-// import * from './函式'
-// import * from './测试'
-// import * from './统计'
-// import * from './表列'
+// export import mdwa = require('./函式');
+// // export import m = require('./测试');
+// // export import m = require('./统计');
+// // export import m = require('./表列');
+
+export * from './函式';
+export * from './测试';
+export * from './统计';
+export * from './表列';
 
 if (require.main === module) (async () => {
     console.log('你好, 世界');
-
 })().then(console.log).catch(console.error)

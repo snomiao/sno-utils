@@ -23,7 +23,7 @@ if (require.main === module) (async () => {
         列值种数表([1, 2, 3, 3, 3, 2, '']),
         { 1: 1, 2: 2, 3: 3, '': 1 })
     深等断言('表键映')(
-        表键映((k: string) => `${k}${k}`)({ a: 1, b: 2 }),
+        表键映((k): string => `${k.toString()}${k.toString()}`)({ a: 1, b: 2 }),
         { aa: 1, bb: 2 })
 })().then(console.log).catch(console.error)
 
@@ -35,7 +35,15 @@ export type 列列 = any[][];
 export type 表列 = 表[];
 export type 键 = string | number | symbol;
 export type 对列 = Iterable<readonly [键, any]>;
-
+export function 表压平(结构: object): object {
+    return 求于(结构, 续函(表对列, 列映(([键, 值]) => {
+        if (typeof 值 === 'object' && 值.toString() === '[object Object]') {
+            return Object.entries(表压平(值))
+                .map(([子键, 值]) => [键 + '.' + 子键, 值])
+        }
+        return [[键, 值]]
+    }), 列列平压, 对列表))
+}
 export function 列交(列列: 列[]) { return 列列.reduce((甲, 乙) => 甲.filter(值 => 乙.includes(值))) }
 export function 列值种数表(列: 列) { return 列.reduce((表, 值) => { 表[值] = 表[值] || 0; 表[值]++; return 表 }, {}); }
 export function 列列平压(列列: 列列) { return 列列.flat(); }
