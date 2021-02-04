@@ -1,7 +1,7 @@
-//
-// Copyright 2019.11 snomiao(snomiao@gmail.com)
-//  雪星异步组件
-//
+/**
+ * 雪星异步组件
+ * Copyright 2019.11 snomiao(snomiao@gmail.com)
+ */
 
 import { 瞄于 } from "./测试"
 
@@ -24,10 +24,6 @@ event4    ====
 
 etc
 */
-/**
- * 
- * author: YiDong Zhuo(snomiao@gmail.com)
- */
 if (require.main === module) (async () => {
     return typeof Promise.resolve()
     // return await Promise.race([false, 睡(1000)].filter())
@@ -45,7 +41,8 @@ if (require.main === module) (async () => {
 })().then(console.log).catch(console.error)
 type 列 = any[]
 export function 睡(毫秒: number) { return new Promise(resolve => setTimeout(resolve, 毫秒)) }
-export function 异步映<入型, 出型>(函: (值: 入型, 序: number, 列: 入型[]) => Promise<出型>, 参数 = { 并发数: +Infinity }) {
+
+function 异步映<入型, 出型>(函: (值: 入型, 序: number, 列: 入型[]) => Promise<出型>, 参数 = { 并发数: +Infinity }) {
     return async (列: 入型[]): Promise<出型[]> => {
         let 并发数 = 参数.并发数
         type Reduce出型 = Promise<(出型 | Promise<出型>)[]>
