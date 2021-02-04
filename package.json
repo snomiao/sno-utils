@@ -9,8 +9,8 @@
     "rollup": "rollup -c",
     "tsc": "tsc",
     "prepare": "tsc && rollup -c",
-    "prepublishOnly": "git commit -a -m publish && npm version patch",
-    "publish": "tsc",
+    "prepublishOnly": "tsc && rollup -c && git commit -a -m pack && npm version patch",
+    "publish": "git push",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "snomiao@gmail.com",
