@@ -1,6 +1,6 @@
 {
   "name": "sno-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "snoutils - 雪星实用组件库……TS中文函数式编程范式尝试，大部分功能尚在内测中",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -9,7 +9,6 @@
     "rollup": "rollup -c",
     "tsc": "tsc",
     "prepare": "tsc && rollup -c",
-    "prepublishOnly": "tsc",
     "publish": "tsc && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
