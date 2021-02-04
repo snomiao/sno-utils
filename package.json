@@ -9,7 +9,7 @@
     "rollup": "rollup -c",
     "tsc": "tsc",
     "prepare": "tsc && rollup -c",
-    "prepublishOnly": "npm version patch",
+    "prepublishOnly": "git commit -a -m publish && npm version patch",
     "publish": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
