@@ -6,18 +6,19 @@
   "module": "dist/module.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags",
+    "prepublishOnly": "npm run build",
     "rollup": "rollup -c",
     "tsc": "tsc",
-    "prepare": "tsc && rollup -c",
-    "prepublishOnly": "tsc && rollup -c && git commit -a -m pack && npm version patch",
-    "publish": "git push",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && rollup -c"
   },
   "author": "snomiao@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.1.1",
     "@types/node": "^14.14.22",
+    "rollup": "^2.40.0",
     "rollup-plugin-typescript2": "^0.29.0",
     "typescript": "^4.1.3"
   },

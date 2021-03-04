@@ -1,19 +1,19 @@
 import { 表压平 } from "./表列";
 
-if (module === require.main) (async () => {
-    console.log(
-        Object.entries(表压平({ 结构: { asdf: { zxcv: '123' }, 782: ',,,' }, x: [1, 2, 3] })))
-    // .length
-    // === `{"结构.782":",,,","结构.asdf.zxcv":"123","x.0":1,"x.1":2,"x.2":3}`
-    // , '结构压平出错')
+// if (module === require.main) (async () => {
+//     console.log(
+//         Object.entries(表压平({ 结构: { asdf: { zxcv: '123' }, 782: ',,,' }, x: [1, 2, 3] })))
+//     // .length
+//     // === `{"结构.782":",,,","结构.asdf.zxcv":"123","x.0":1,"x.1":2,"x.2":3}`
+//     // , '结构压平出错')
 
-    // console.log(
-    //     结构数组向CSV转换([
-    //         { asdf: 'zx"cv', 123: 456 },
-    //         { asdf: 'zx"cv', 782: ',,,' },
-    //         { asdf: { zxcv: new Date() }, 782: ',,,' },
-    //     ]), '结构数组CSV')
-})().then(console.log).catch(console.error)
+//     // console.log(
+//     //     结构数组向CSV转换([
+//     //         { asdf: 'zx"cv', 123: 456 },
+//     //         { asdf: 'zx"cv', 782: ',,,' },
+//     //         { asdf: { zxcv: new Date() }, 782: ',,,' },
+//     //     ]), '结构数组CSV')
+// })().then(console.log).catch(console.error)
 
 
 
