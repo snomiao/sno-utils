@@ -1,3 +1,13 @@
+## [0.1.14](https://github.com/snomiao/sno-utils/compare/v0.1.13...v0.1.14) (2021-09-27)
+
+
+### Bug Fixes
+
+* 列错 ([b0279f8](https://github.com/snomiao/sno-utils/commit/b0279f85b081652e888ae7e9b9f0a5fbbced6398))
+* 表值列 ([17889f3](https://github.com/snomiao/sno-utils/commit/17889f355bacb1e8e07e2c9a8bdf7bc54a6c99f7))
+
+
+
 ## [0.1.13](https://github.com/snomiao/sno-utils/compare/v0.1.12...v0.1.13) (2021-09-27)
 
 
