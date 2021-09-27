@@ -1,6 +1,6 @@
 {
   "name": "sno-utils",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "snoutils - 雪星实用组件库……TS中文函数式编程范式尝试，大部分功能尚在内测中",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.1.1",
     "@types/node": "^14.14.22",
-    "conventional-changelog": "^3.1.24",
+    "conventional-changelog-cli": "^2.1.1",
     "rollup": "^2.40.0",
     "rollup-plugin-typescript2": "^0.29.0",
     "typescript": "^4.1.3"
