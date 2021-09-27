@@ -1,6 +1,6 @@
 /**
  * 表列实用函数
- * author: YiDong Zhuo(snomiao@gmail.com)
+ * author: snomiao(snomiao@gmail.com)
  */
 import { 求于 } from "./函式";
 import { 续函 } from "./函续";
@@ -45,76 +45,78 @@ export function 表压平(结构: object): object {
         return [[键, 值]]
     }), 列列平压, 对列表))
 }
-
-export const 列不含值否 = (列: 列) => (值: 值) => !列.includes(值)
 export const 列不含值 = (列: 列) => (值: 值) => !列.includes(值)
+export const 列不含值否 = (列: 列) => (值: 值) => !列.includes(值)
 export const 列交 = (列列: 列[]) => 列列.reduce((甲, 乙) => 甲.filter(值 => 乙.includes(值)))
 export const 列值种数表 = (列: 列) => 列.reduce((表, 值) => { 表[值] = 表[值] || 0; 表[值]++; return 表; }, {})
 export const 列列平压 = (列列: 列列) => 列列.flat()
 export const 列列翻转 = (列列: 值[][]) => 列列[0]?.map((_, 序) => 列列.map(列 => 列[序]))
 export const 列反 = (列: 列) => 列.reverse()
 export const 列含 = (前: 列, 后: 列) => 列筛(值 => 后.includes(值))(前)
-export const 列含值否 = (列: 列) => (值: 值) => 列.includes(值)
 export const 列含值 = (列: 列) => (值: 值) => 列.includes(值)
+export const 列含值否 = (列: 列) => (值: 值) => 列.includes(值)
 export const 列差 = (前: 列, 后: 列) => 列筛(值 => !后.includes(值))(前)
 export const 列并 = (列列: 列[]) => [...列列平压(列列)]
 export const 列序映 = (函: (值: 值, 序: number) => any) => ((列: 列) => 列.map((值, 序) => 函(值, 序)))
 export const 列归 = (函: (前: 值, 后: 值) => any, 初值?: 值) => (列: 列) => 列.reduce(函, 初值)
 export const 列映 = (函: (值: 值) => any) => ((列: 列) => 列.map(值 => 函(值)))
 export const 列筛 = (函: (键: 键) => boolean = (e) => !!e) => ((列: 列) => 列.filter(函))
+export const 列错 = (前: 列, 后:列) =>  前.map((值, i) => [值, 后[i]]);
 export const 对列表 = (对列: 对列) => Object.fromEntries(对列)
 export const 数列和 = (数列: 数列) => 数列.reduce((前, 后) => 前 + 后)
 export const 数列生成 = (数量: number, 偏移 = 0) => [...Array(数量).keys()].map(值 => 值 + 偏移)
 export const 数列积 = (数列: 数列) => 数列.reduce((前, 后) => 前 * 后)
 export const 表值列 = (表: 表) => Object.values(表)
-export const 表值列不含值否 = (表: 表) => 列不含值否(表值列(表))
 export const 表值列不含值 = (表: 表) => 列不含值否(表值列(表))
+export const 表值列不含值否 = (表: 表) => 列不含值否(表值列(表))
 export const 表值列交 = (表列: 表列) => 列交(表列值列(表列))
 export const 表值列值种数表 = (表: 表) => 列值种数表(表值列(表))
 export const 表值列列平压 = (表列: 表列) => 列列平压(表列值列(表列))
 export const 表值列列翻转 = (表列: 表列) => 列列翻转(表列值列(表列))
 export const 表值列反 = (表: 表) => 列反(表值列(表))
 export const 表值列含 = (前: 表, 后: 表) => 列含(表值列(前), 表值列(后))
-export const 表值列含值否 = (表: 表) => 列含值否(表值列(表))
 export const 表值列含值 = (表: 表) => 列含值否(表值列(表))
+export const 表值列含值否 = (表: 表) => 列含值否(表值列(表))
 export const 表值列差 = (前: 表, 后: 表) => 列差(表值列(前), 表值列(后))
 export const 表值列并 = (表列: 表列) => 列并(表列值列(表列))
 export const 表值列序映 = (函: (值: 值, 序: number) => any, 表: 表) => 列序映(函)(表值列(表))
 export const 表值列归 = (函: (前: 值, 后: 值) => any, 表: 表) => 列归(函, 表值列(表))
 export const 表值列映 = (函: (值: 值) => any, 表: 表) => 列映(函)(表值列(表))
 export const 表值列筛 = (函: (值: 值) => boolean, 表: 表) => 列筛(函)( 表值列(表))
+export const 表值列错 = (前: 表, 后: 表) => 列错(表值列(前), 表值列(后))
 export const 表值映 = (函: (值: 值) => any) => (表: 表) => 对列表(表对列(表).map(([名称, 位置]) => [名称, 函(位置)]))
 export const 表值筛 = (函: (值: 值) => boolean) => (表: 表) => 对列表(表对列(表).filter(([, 位置]) => 函(位置)))
 export const 表列值列 = (表列:表列) => 列映(表值列)(表列)
-export const 表列填充翻转 = function (表列: 表列) { return 对列表(表列键交(表列).map(键 => [键, 表列.map(表 => 表[键])])) }
-export const 表列提取 = function (表列: 表列, 字段列表: string | string[]) { return 对列表(表对列(表列).filter(([k]) => 字段列表.includes(k))) }
-export const 表列翻转 = function (表列: 表列) { return 对列表(表列键交(表列).map(键 => [键, 表列.map(表 => 表[键]).filter(e => e !== undefined)])) }
-export const 表列键交 = function (表列: 表列) { return 列交(表列键列(表列)) }
+export const 表列填充翻转 = (表列: 表列) => 对列表(表列键交(表列).map(键 => [键, 表列.map(表 => 表[键])]))
+export const 表列提取 = (表列: 表列, 字段列表: string | string[]) => 对列表(表对列(表列).filter(([k]) => 字段列表.includes(k)))
+export const 表列翻转 = (表列: 表列) => 对列表(表列键交(表列).map(键 => [键, 表列.map(表 => 表[键]).filter(e => e !== undefined)]))
+export const 表列键交 = (表列: 表列) => 列交(表列键列(表列))
 export const 表列键列 = (表列:表列) => 列映(表键列)(表列)
-export const 表对列 = function (表: 表) { return Object.entries(表) }
-export const 表投影 = function (表: 表, 字段列表: string | string[]) { return 对列表(表对列(表).filter(([k]) => 字段列表.includes(k))) }
-export const 表键值反转 = function (表: 表) { return 求于(表, 表键值映(([键, 值]) => [值, 键])) }
-export const 表键值映 = function (函: ((键值: [string, any]) => [string, any])) { return (表: 表) => 对列表(表对列(表).map(函)) }
-export const 表键值筛 = function (函: (键值: [string, any]) => boolean) { return (表: 表) => 对列表(表对列(表).filter(函)) }
-export const 表键列 = function (表: 表) { return Object.keys(表) }
-export const 表键列不含值否 = (表: 表) => 列不含值否(表键列(表))
+export const 表对列 = (表: 表) => Object.entries(表)
+export const 表投影 = (表: 表, 字段列表: string | string[]) => 对列表(表对列(表).filter(([k]) => 字段列表.includes(k)))
+export const 表键值反转 = (表: 表) => 求于(表, 表键值映(([键, 值]) => [值, 键]))
+export const 表键值映 = (函: ((键值: [string, any]) => [string, any])) => (表: 表) => 对列表(表对列(表).map(函))
+export const 表键值筛 = (函: (键值: [string, any]) => boolean) => (表: 表) => 对列表(表对列(表).filter(函))
+export const 表键列 = (表: 表) => Object.keys(表)
 export const 表键列不含值 = (表: 表) => 列不含值否(表键列(表))
+export const 表键列不含值否 = (表: 表) => 列不含值否(表键列(表))
 export const 表键列交 = (表列: 表列) => 列交(表列键列(表列))
 export const 表键列值种数表 = (表: 表) => 列值种数表(表键列(表))
 export const 表键列列平压 = (表列: 表列) => 列列平压(表列键列(表列))
 export const 表键列列翻转 = (表列: 表列) => 列列翻转(表列键列(表列))
 export const 表键列反 = (表: 表) => 列反(表键列(表))
 export const 表键列含 = (前: 表, 后: 表) => 列含(表键列(前), 表键列(后))
-export const 表键列含值否 = (表: 表) => 列含值否(表键列(表))
 export const 表键列含值 = (表: 表) => 列含值否(表键列(表))
+export const 表键列含值否 = (表: 表) => 列含值否(表键列(表))
 export const 表键列差 = (前: 表, 后: 表) => 列差(表键列(前), 表键列(后))
 export const 表键列并 = (表列: 表列) => 列并(表列键列(表列))
 export const 表键列序映 = (函: (值: 值, 序: number) => any, 表: 表) => 列序映(函)(表键列(表))
 export const 表键列归 = (函: (前: 值, 后: 值) => any, 表: 表) => 列归(函, 表键列(表))
 export const 表键列映 = (函: (值: 值) => any, 表: 表) => 列映(函)(表键列(表))
 export const 表键列筛 = (函: (键: 键) => boolean, 表: 表) => 列筛(函)( 表键列(表))
-export const 表键映 = function (函: (键: 键) => any) { return (表: 表) => 对列表(表对列(表).map(([名称, 位置]) => [函(名称), 位置])) }
-export const 表键筛 = function (函: (键: 键) => boolean) { return (表: 表) => 对列表(表对列(表).filter(([名称]) => 函(名称))) }
+export const 表键列错 = (前: 表, 后: 表) => 列错(表键列(前), 表键列(后))
+export const 表键映 = (函: (键: 键) => any) => (表: 表) => 对列表(表对列(表).map(([名称, 位置]) => [函(名称), 位置]))
+export const 表键筛 = (函: (键: 键) => boolean) => (表: 表) => 对列表(表对列(表).filter(([名称]) => 函(名称)))
 // export function 表按键拆解(拆解函数: (键: 键) => boolean, 拆解键名 = '键', 拆解值名 = '值') {
 //     return (表: 表) => {
 //         const 拆解键列: string[] = Object.keys(表).filter(拆解函数);
