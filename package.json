@@ -6,6 +6,7 @@
   "module": "dist/module.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "patch": "tsc && npm version patch",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push --follow-tags",
     "prepublishOnly": "npm run build",
