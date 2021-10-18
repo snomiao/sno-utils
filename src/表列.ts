@@ -45,7 +45,6 @@ export function 表压平(结构: object): object {
     }), 列列平压, 对列表))
 }
 
-
 export const 列交 = function (列列: 列[]) { return 列列.reduce((甲, 乙) => 甲.filter(值 => 乙.includes(值))) }
 export const 列值种数表 = function (列: 列) { return 列.reduce((表, 值) => { 表[值] = 表[值] || 0; 表[值]++; return 表 }, {}) }
 export const 列列平压 = function (列列: 列列) { return 列列.flat() }
