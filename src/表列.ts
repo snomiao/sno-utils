@@ -1,10 +1,15 @@
 /**
+ * Copyright 2019-2021 snomiao(snomiao@gmail.com)
+ */
+
+/**
  * 表列实用函数
  * author: snomiao(snomiao@gmail.com)
  */
 import { 求于 } from "./函式";
 import { 续函 } from "./函续";
 import { 深等断言 } from "./测试";
+import { 值, 列, 列列, 对列, 归函, 数列, 映函, 筛函, 表, 表列, 键 } from "./类型";
 
 // if (require.main === module) (async () => {
 //     深等断言('列交')(
@@ -27,15 +32,6 @@ import { 深等断言 } from "./测试";
 //         { aa: 1, bb: 2 })
 // })().then(console.log).catch(console.error)
 
-export interface 表 { [k: string]: 值 }
-export interface 表表 { [k: string]: 表 }
-export type 数列 = number[];
-export type 列 = any[];
-export type 列列 = any[][];
-export type 表列 = 表[];
-export type 键 = string | number | symbol;
-export type 值 = any;
-export type 对列 = Iterable<readonly [键, any]>;
 export function 表压平(结构: object): object {
     return 求于(结构, 续函(表对列, 列映(([键, 值]) => {
         if (typeof 值 === 'object' && 值.toString() === '[object Object]') {
@@ -58,9 +54,9 @@ export const 列含值否 = (列: 列) => (值: 值) => 列.includes(值)
 export const 列差 = (前: 列, 后: 列) => 列筛(值 => !后.includes(值))(前)
 export const 列并 = (列列: 列[]) => [...列列平压(列列)]
 export const 列序映 = (函: (值: 值, 序: number) => any) => ((列: 列) => 列.map((值, 序) => 函(值, 序)))
-export const 列归 = (函: (前: 值, 后: 值) => any, 初值?: 值) => (列: 列) => 列.reduce(函, 初值)
-export const 列映 = (函: (值: 值) => any) => ((列: 列) => 列.map(值 => 函(值)))
-export const 列筛 = (函: (键: 键) => boolean = (e) => !!e) => ((列: 列) => 列.filter(函))
+export const 列归 = (函: 归函 = (e) => e, 初值?: 值) => (列: 列) => 列.reduce(函, 初值)
+export const 列映 = (函: 映函 = (e) => e) => ((列: 列) => 列.map(值 => 函(值)))
+export const 列筛 = (函: 筛函 = (e) => e) => (列: 列) => 列.filter(函)
 export const 列错 = (前: 列, 后:列) =>  前.map((值, i) => [值, 后[i]]);
 export const 对列表 = (对列: 对列) => Object.fromEntries(对列)
 export const 数列和 = (数列: 数列) => 数列.reduce((前, 后) => 前 + 后)
@@ -117,6 +113,7 @@ export const 表键列筛 = (函: (键: 键) => boolean, 表: 表) => 列筛(函
 export const 表键列错 = (前: 表, 后: 表) => 列错(表键列(前), 表键列(后))
 export const 表键映 = (函: (键: 键) => any) => (表: 表) => 对列表(表对列(表).map(([名称, 位置]) => [函(名称), 位置]))
 export const 表键筛 = (函: (键: 键) => boolean) => (表: 表) => 对列表(表对列(表).filter(([名称]) => 函(名称)))
+
 // export function 表按键拆解(拆解函数: (键: 键) => boolean, 拆解键名 = '键', 拆解值名 = '值') {
 //     return (表: 表) => {
 //         const 拆解键列: string[] = Object.keys(表).filter(拆解函数);

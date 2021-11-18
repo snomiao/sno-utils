@@ -1,4 +1,8 @@
 {
   "tabWidth": 4,
-  "useTabs": false
+  "useTabs": false,
+  "printWidth": 240,
+  "arrowParens": "avoid",
+  "proseWrap": "never"
+
 }
