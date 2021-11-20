@@ -7,8 +7,7 @@
  * author: snomiao(snomiao@gmail.com)
  */
 import { 求于 } from "./函式";
-import { 续函 } from "./函续";
-import { 深等断言 } from "./测试";
+import { 续函, 进行 } from "./函续";
 import { 值, 列, 列列, 对列, 归函, 数列, 映函, 筛函, 表, 表列, 键 } from "./类型";
 
 // if (require.main === module) (async () => {
@@ -47,9 +46,12 @@ export const 列交 = (列列: 列[]) => 列列.reduce((甲, 乙) => 甲.filter(
 export const 列值种数表 = (列: 列) => 列.reduce((表, 值) => { 表[值] = 表[值] || 0; 表[值]++; return 表; }, {})
 export const 列列平压 = (列列: 列列) => 列列.flat()
 export const 列列翻转 = (列列: 值[][]) => 列列[0]?.map((_, 序) => 列列.map(列 => 列[序]))
+export const 成列 = (值: any) => (列长: number) => Array(列长).fill(值);
+export const 零成列 = (列长: number) => Array(列长).fill(0);
+export const 一成列 = (列长: number) => Array(列长).fill(1);
 export const 列反 = (列: 列) => 列.reverse()
 export const 列含 = (前: 列, 后: 列) => 列筛(值 => 后.includes(值))(前)
-export const 列含值 = (列: 列) => (值: 值) => 列.includes(值)
+// export const 列含值 = (列: 列) => (值: 值) => 列.includes(值)
 export const 列含值否 = (列: 列) => (值: 值) => 列.includes(值)
 export const 列差 = (前: 列, 后: 列) => 列筛(值 => !后.includes(值))(前)
 export const 列并 = (列列: 列[]) => [...列列平压(列列)]
@@ -94,8 +96,7 @@ export const 表键值反转 = (表: 表) => 求于(表, 表键值映(([键, 值
 export const 表键值映 = (函: ((键值: [string, any]) => [string, any])) => (表: 表) => 对列表(表对列(表).map(函))
 export const 表键值筛 = (函: (键值: [string, any]) => boolean) => (表: 表) => 对列表(表对列(表).filter(函))
 export const 表键列 = (表: 表) => Object.keys(表)
-export const 表键列不含值 = (表: 表) => 列不含值否(表键列(表))
-export const 表键列不含值否 = (表: 表) => 列不含值否(表键列(表))
+export const 表键列不含值否 = 续函(表键列, 列不含值否)
 export const 表键列交 = (表列: 表列) => 列交(表列键列(表列))
 export const 表键列值种数表 = (表: 表) => 列值种数表(表键列(表))
 export const 表键列列平压 = (表列: 表列) => 列列平压(表列键列(表列))
