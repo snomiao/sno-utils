@@ -7,9 +7,9 @@
   "types": "dist/index.d.ts",
   "_type": "module",
   "scripts": {
-    "patch": "npm run build && npm version patch",
-    "minor": "npm run build && npm version minor",
-    "major": "npm run build && npm version major",
+    "patch": "tsc && npm version patch",
+    "minor": "tsc && npm version minor",
+    "major": "tsc && npm version major",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "git push --follow-tags",
     "prepublishOnly": "npm run build",
