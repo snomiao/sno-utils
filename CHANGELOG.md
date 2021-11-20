@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/snomiao/sno-utils/compare/v0.2.0...v0.2.1) (2021-11-20)
+
+
+### Bug Fixes
+
+* rollup and func-pipe ([31f07a6](https://github.com/snomiao/sno-utils/commit/31f07a6e4bd30ba16ad07e44b9b31486d3b5a5c1))
+
+
+
 # [0.2.0](https://github.com/snomiao/sno-utils/compare/v0.1.14...v0.2.0) (2021-11-18)
 
 
