@@ -5,7 +5,7 @@
   "main": "dist/main.js",
   "module": "dist/module.mjs",
   "types": "dist/index.d.ts",
-  "_type": "module",
+  "type": "module",
   "scripts": {
     "patch": "tsc && npm version patch",
     "minor": "tsc && npm version minor",
