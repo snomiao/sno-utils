@@ -18,6 +18,7 @@
         "build:tsc": "tsc",
         "build:babel": "babel src -d lib --extensions .ts",
         "build:rollup": "rollup -c",
+        "test": "cd test && npm i && npm test",
         "prettier": "npx prettier --write ."
     },
     "author": "snomiao@gmail.com",
