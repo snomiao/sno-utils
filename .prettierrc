@@ -1,8 +1,7 @@
 {
-  "tabWidth": 4,
-  "useTabs": false,
-  "printWidth": 240,
-  "arrowParens": "avoid",
-  "proseWrap": "never"
-
+    "tabWidth": 4,
+    "useTabs": false,
+    "printWidth": 240,
+    "arrowParens": "avoid",
+    "proseWrap": "never"
 }
