@@ -15,8 +15,6 @@ import { 表压平 } from "./表列";
 //     //     ]), '结构数组CSV')
 // })().then(console.log).catch(console.error)
 
-
-
 // export function 结构数组向CSV转换(结构数组: object[], 分割符 = ',') {
 //     const 平展结构数组 = 结构数组.map(结构 => 表压平(结构))
 //     const 字段数组 = Object.keys(Object.fromEntries(平展结构数组

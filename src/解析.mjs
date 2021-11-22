@@ -1,6 +1,6 @@
 // TODO CSV、TSV、JSON 等解析
 
-const 式试器 = (式) => (串) => 串?.match(式)?.[0]?.length;
+const 式试器 = 式 => 串 => 串?.match(式)?.[0]?.length;
 const 分词 = (串, 符器表) => {
     let 词列 = [];
     const 增词 = (符, 长) => {
@@ -40,7 +40,7 @@ const 表合词 = (词列, 合词规则表) => {
     return 词列;
 };
 const 合词 = (词列, 合词规则表列) => {
-    合词规则表列.map((合词规则表) => {
+    合词规则表列.map(合词规则表 => {
         词列 = 表合词(词列, 合词规则表);
     });
     return 词列;
@@ -65,7 +65,7 @@ const 合词规则表列 = [
     //     行割割: ([a, _, c]) => ["行", [...a, c]],
     // },
 ];
-const TSV解析 = (串) => {
+const TSV解析 = 串 => {
     return 合词(
         分词(串, {
             字串: 式试器(/^"[\s\S]*?"/),
@@ -87,4 +87,3 @@ const TSV解析 = (串) => {
 console.log(TSV解析('asdf,d,as\n"\n""\n",asdf,123.456e3'));
 
 // "asdf".match('sd')=sd
-

@@ -1,4 +1,3 @@
-
 export const 相等 = (前: any, 后: any) => 前 === 后;
 export const 弱相等 = (前: any, 后: any) => 前 == 后;
 export const 相加 = (前: any, 后: any) => 前 + 后;

@@ -1,50 +1,52 @@
 {
-  "name": "sno-utils",
-  "version": "0.2.2",
-  "description": "snoutils - 雪星实用组件库……TS中文函数式编程范式尝试，大部分功能尚在内测中",
-  "main": "dist/main.js",
-  "_type": "module",
-  "_comment": "type cannot be module as it will turn main.js into an esm but it should be an commonjs",
-  "module": "dist/module.mjs",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "patch": "tsc && npm version patch",
-    "minor": "tsc && npm version minor",
-    "major": "tsc && npm version major",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "postversion": "git push --follow-tags",
-    "prepublishOnly": "npm run build",
-    "build": "npm run build:tsc && npm run build:babel && npm run build:rollup",
-    "build:tsc": "tsc",
-    "build:babel": "babel src -d lib --extensions .ts",
-    "build:rollup": "rollup -c"
-  },
-  "author": "snomiao@gmail.com",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/node": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "@babel/preset-typescript": "^7.16.0",
-    "@rollup/plugin-typescript": "^8.1.1",
-    "@types/node": "^14.14.22",
-    "conventional-changelog-cli": "^2.1.1",
-    "nodemon": "^2.0.15",
-    "rollup": "^2.40.0",
-    "rollup-plugin-typescript2": "^0.29.0",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.1.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/snomiao/sno-utils.git"
-  },
-  "bugs": {
-    "url": "https://github.com/snomiao/sno-utils/issues"
-  },
-  "homepage": "https://github.com/snomiao/sno-utils#readme",
-  "files": [
-    "dist"
-  ]
+    "name": "sno-utils",
+    "version": "0.2.2",
+    "description": "snoutils - 雪星实用组件库……TS中文函数式编程范式尝试，大部分功能尚在内测中",
+    "main": "dist/main.js",
+    "_type": "module",
+    "_comment": "type cannot be module as it will turn main.js into an esm but it should be an commonjs",
+    "module": "dist/module.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "patch": "tsc && npm version patch",
+        "minor": "tsc && npm version minor",
+        "major": "tsc && npm version major",
+        "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+        "postversion": "git push --follow-tags",
+        "prepublishOnly": "npm run build",
+        "build": "npm run build:tsc && npm run build:babel && npm run build:rollup",
+        "build:tsc": "tsc",
+        "build:babel": "babel src -d lib --extensions .ts",
+        "build:rollup": "rollup -c",
+        "prettier": "npx prettier --write ."
+    },
+    "author": "snomiao@gmail.com",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.0",
+        "@babel/node": "^7.16.0",
+        "@babel/preset-env": "^7.16.4",
+        "@babel/preset-typescript": "^7.16.0",
+        "@rollup/plugin-typescript": "^8.1.1",
+        "@types/node": "^14.14.22",
+        "conventional-changelog-cli": "^2.1.1",
+        "nodemon": "^2.0.15",
+        "prettier": "^2.4.1",
+        "rollup": "^2.40.0",
+        "rollup-plugin-typescript2": "^0.29.0",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.1.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/snomiao/sno-utils.git"
+    },
+    "bugs": {
+        "url": "https://github.com/snomiao/sno-utils/issues"
+    },
+    "homepage": "https://github.com/snomiao/sno-utils#readme",
+    "files": [
+        "dist"
+    ]
 }

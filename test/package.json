@@ -1,17 +1,17 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test-require": "node require.js",
-    "test-import": "node import.mjs",
-    "test": "npm run test-require && npm run test-import"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "sno-utils": "file:.."
-  }
+    "name": "test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test-require": "node require.js",
+        "test-import": "node import.mjs",
+        "test": "npm run test-require && npm run test-import"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "sno-utils": "file:.."
+    }
 }
