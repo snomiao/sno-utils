@@ -1,3 +1,13 @@
+## [0.2.4](https://github.com/snomiao/sno-utils/compare/v0.2.3...v0.2.4) (2021-11-22)
+
+
+### Bug Fixes
+
+* npm test ([b222645](https://github.com/snomiao/sno-utils/commit/b222645771fbf41a16bf033612f9a9bc785937b1))
+* types ([02d49f2](https://github.com/snomiao/sno-utils/commit/02d49f22bfc29e4b609b6a2638e064d4beb44db6))
+
+
+
 ## [0.2.3](https://github.com/snomiao/sno-utils/compare/v0.2.2...v0.2.3) (2021-11-22)
 
 
