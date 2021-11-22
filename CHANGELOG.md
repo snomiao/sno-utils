@@ -1,3 +1,12 @@
+## [0.2.3](https://github.com/snomiao/sno-utils/compare/v0.2.2...v0.2.3) (2021-11-22)
+
+
+### Bug Fixes
+
+* complete test ([e2a752b](https://github.com/snomiao/sno-utils/commit/e2a752b5163388d61d6f250da1acfb605d2c81ec))
+
+
+
 ## [0.2.2](https://github.com/snomiao/sno-utils/compare/v0.2.1...v0.2.2) (2021-11-21)
 
 ## [0.2.1](https://github.com/snomiao/sno-utils/compare/v0.2.0...v0.2.1) (2021-11-20)
