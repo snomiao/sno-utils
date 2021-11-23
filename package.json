@@ -1,6 +1,6 @@
 {
     "name": "sno-utils",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "description": "snoutils - 雪星实用组件库……TS中文函数式编程范式尝试，大部分功能尚在内测中",
     "main": "dist/main.js",
     "_type": "module // type cannot be module as it will turn main.js into an esm but it should be an commonjs",
