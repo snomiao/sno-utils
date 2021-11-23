@@ -14,7 +14,7 @@
         "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
         "postversion": "git push --follow-tags",
         "prepublishOnly": "npm run build",
-        "check": "npm run prettier && tsc",
+        "check": "npm run prettier && git add . && git commit -a -m format && tsc",
         "build": "npm run build:tsc && npm run build:babel && npm run build:rollup",
         "build:tsc": "tsc",
         "build:babel": "babel src -d lib --extensions .ts",
