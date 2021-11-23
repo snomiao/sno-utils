@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/snomiao/sno-utils/compare/v0.2.4...v0.3.0) (2021-11-23)
+
+
+### Features
+
+* 文本文件缓存 ([96aca12](https://github.com/snomiao/sno-utils/commit/96aca129d6e4e7061a1ca8162d3b5e4c935ac5f3))
+
+
+
 ## [0.2.4](https://github.com/snomiao/sno-utils/compare/v0.2.3...v0.2.4) (2021-11-22)
 
 
