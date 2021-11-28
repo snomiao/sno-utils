@@ -2,5 +2,7 @@
     "code-runner.executorMap": {
         "javascript": "npx nodemon -x babel-node",
         "typescript": "npx nodemon -x node --experimental-specifier-resolution=node --experimental-modules --no-warnings --loader ts-node/esm"
+        // "javascript": "npx nodemon -x babel-node",
+        // "typescript": "npx nodemon -x node --experimental-specifier-resolution=node --experimental-modules --no-warnings --loader ts-node/esm"
     }
 }
