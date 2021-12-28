@@ -1,5 +1,3 @@
-import path from "path";
-
 export const UTF8_BOM头删除 = (e: string) => e.replace(/^\ufeff/, "");
 export const UTF8_BOM头追加 = (e: string) => "\ufeff" + e;
 export const 换行CR于CRLF删除 = (e: string) => e.replace(/\r\n/g, "\n");
@@ -15,7 +13,7 @@ export const 文本文件读取 = async (路径: string) => await (await fsp()).
  * NODE-ONLY
  */
 export const 文件写入 = async (路径: string, 数据: string | Uint8Array) => {
-    await (await fsp()).mkdir(path.dirname(路径), { recursive: true });
+    await (await fsp()).mkdir((await import('path')).dirname(路径), { recursive: true });
     await (await fsp()).writeFile(路径, 数据);
 };
 export const 文本文件缓存 = async (路径: string, 内容函数: () => Promise<any>) =>
