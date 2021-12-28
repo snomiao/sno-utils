@@ -1,3 +1,12 @@
+## [0.3.6](https://github.com/snomiao/sno-utils/compare/v0.3.5...v0.3.6) (2021-12-28)
+
+
+### Bug Fixes
+
+* remove node dependence ([ed58401](https://github.com/snomiao/sno-utils/commit/ed5840153364cab4a077bb32c9caa4fc8ce3f02f))
+
+
+
 ## [0.3.5](https://github.com/snomiao/sno-utils/compare/v0.3.4...v0.3.5) (2021-11-28)
 
 ### Bug Fixes
