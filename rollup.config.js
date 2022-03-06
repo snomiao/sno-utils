@@ -2,16 +2,15 @@ import pkg from "./package.json";
 import { defineConfig } from "rollup";
 export default defineConfig({
     input: pkg.main,
-    experimentalTopLevelAwait: true,
     output: [
-        {
-            file: pkg.cjs,
-            format: "cjs",
-            sourcemap: true,
-        },
         {
             file: pkg.module,
             format: "esm",
+            sourcemap: true,
+        },
+        {
+            file: pkg.cjs,
+            format: "cjs",
             sourcemap: true,
         },
         {
@@ -22,6 +21,7 @@ export default defineConfig({
         },
         {
             file: pkg.iife,
+            name: "snoUtils",
             format: "iife",
             sourcemap: true,
         },
