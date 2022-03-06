@@ -1,9 +1,9 @@
 import pkg from "./package.json";
 export default {
-    input: "lib/index.js",
+    input: pkg.main,
     output: [
         {
-            file: pkg.main,
+            file: pkg.cjs,
             format: "cjs",
             sourcemap: true,
         },
