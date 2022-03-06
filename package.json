@@ -5,6 +5,7 @@
     "main": "lib/index.js",
     "_type": "module // type cannot be module as it will turn main.js into an esm but it should be an commonjs",
     "cjs": "dist/index.js",
+    "iife": "dist/index.iife.js",
     "module": "dist/module.mjs",
     "umd": "dist/umd.js",
     "types": "dist/index.d.ts",

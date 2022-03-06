@@ -1,6 +1,8 @@
 import pkg from "./package.json";
-export default {
+import { defineConfig } from "rollup";
+export default defineConfig({
     input: pkg.main,
+    experimentalTopLevelAwait: true,
     output: [
         {
             file: pkg.cjs,
@@ -18,7 +20,12 @@ export default {
             format: "umd",
             sourcemap: true,
         },
+        {
+            file: pkg.iife,
+            format: "iife",
+            sourcemap: true,
+        },
     ],
     external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
     plugins: [],
-};
+});
